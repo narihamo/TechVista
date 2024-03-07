@@ -1,0 +1,29 @@
+.list {
+    border: 2px solid var(--blue);
+    width: 300px;
+    margin-bottom: 24px;
+}
+
+.listItem {
+    cursor: pointer;
+    padding: 14px 24px;
+    /*border-bottom: 1px solid var(--blue);*/
+}
+.listItem:hover {
+    background-color: #f0f0f0;
+    transition: .3s;
+}
+
+.selected {
+    background-color: var(--blue);
+    color: white;
+    transition: .1s;
+}
+.selected:hover {
+    background-color: var(--blue);
+}
+
+.title {
+    font-size: 18px;
+    margin-bottom: 4px;
+}

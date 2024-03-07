@@ -1,0 +1,21 @@
+.shop {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    grid-template-areas:
+    'A A A A  B B B B  B B B B';
+    margin-top: 32px;
+    padding: 0 32px;
+}
+
+.black {
+    background-color: black;
+}
+
+.devicesFilter {
+    grid-area: A;
+    margin-right: 50px;
+}
+
+.devices {
+    grid-area: B;
+}

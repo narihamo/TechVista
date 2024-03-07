@@ -1,0 +1,36 @@
+.device {
+    padding: 24px;
+    text-decoration: none;
+    color: black;
+}
+.device:hover {
+    background-color: #f0f0f0;
+    transition: .4s;
+}
+
+.img img {
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+    margin-bottom: 16px;
+}
+
+.name {
+    margin-bottom: 8px;
+}
+
+.price {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.rating {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+}
+.rating p {
+    margin: 0;
+}

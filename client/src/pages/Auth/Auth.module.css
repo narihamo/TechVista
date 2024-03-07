@@ -1,0 +1,52 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: center url('../../../public/authBg.png');
+    width: 100vw;
+    height: 100vh;
+}
+
+.form {
+    background-color: #fff;
+    /*width: 600px;*/
+    /*height: 400px;*/
+    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputWrap {
+    margin-bottom: 16px;
+}
+
+.inputHeader {
+    margin: 0 0 6px 0;
+}
+
+.input {
+    border: none;
+    outline: 3px solid var(--blue);
+    background-color: #fff;
+    padding: 12px 18px;
+    width: 300px;
+    max-height: 50px;
+    font-size: 14px;
+    transition: .3s;
+}
+.input:focus {
+    outline: 3px solid #4b8dff;
+}
+
+.button {
+    padding: 12px 18px;
+    width: 336px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.haveAccount {
+    font-size: 12px;
+}
