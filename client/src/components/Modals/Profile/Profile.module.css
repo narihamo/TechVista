@@ -1,0 +1,32 @@
+.modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    transition: .2s;
+    opacity: 1;
+    user-select: none;
+    z-index: 10;
+}
+
+.modalInactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: #fff;
+    width: 120px;
+    padding: 12px 0;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+.link:hover {
+    transition: .3s;
+    background-color: #efefef;
+}

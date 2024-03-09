@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import DeviceList from '../../components/DeviceList/DeviceList'
 import TypeBar from '../../components/TypeBar/TypeBar'
@@ -9,8 +9,10 @@ import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import {getBrands} from "../../http/brandService";
 import {getTypes} from "../../http/typeService";
+import Profile from "../../components/Modals/Profile/Profile";
 
 const Shop = observer(() => {
+  const [isOpen, setOpen] = useState(false)
   const {device, brand, type} = useContext(Context)
 
   useEffect(() => {
@@ -23,15 +25,17 @@ const Shop = observer(() => {
   }, [device.brands])
 
   useEffect(() => {
-    getDevices(type.selectedType.id, brand.selectedBrand.id, device.page, 5).then(data => {
+    getDevices(type.selectedType.id, brand.selectedBrand.id, device.page, 6).then(data => {
       device.setDevices(data.rows)
       device.setTotalCount(data.count)
     })
-  }, [device.page, type.selectedType, brand.selectedBrand,])
+  }, [device.page, type.selectedType, brand.selectedBrand])
+
+
 
   return (
     <>
-      <Navbar/>
+      <Navbar setOpen={setOpen} isOpen={isOpen}/>
       <div className={styles.shop}>
         <div className={styles.devicesFilter}>
           <TypeBar />

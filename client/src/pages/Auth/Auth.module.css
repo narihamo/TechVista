@@ -45,6 +45,14 @@
     width: 336px;
     cursor: pointer;
     margin-top: 12px;
+    background-color: #fff;
+    transition: .3s;
+    border: 3px solid var(--blue);
+}
+.button:hover {
+    transition: .3s;
+    background-color: var(--blue);
+    color: white;
 }
 
 .haveAccount {
