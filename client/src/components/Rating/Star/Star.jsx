@@ -15,7 +15,7 @@ function Star({ value }) {
 
   return (
     <div
-      className="star"
+      style={{cursor: "pointer"}}
       onClick={() => setRating(value)}
       onMouseEnter={() => setHover(value)}
       onMouseLeave={() => setHover(null)}
