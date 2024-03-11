@@ -19,8 +19,8 @@ const BasketDevice = db.define('basket_device', {
 const Device = db.define('device', {
     id: {type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
-    price: {type: DataTypes.INTEGER, allowNull: false}, 
-    rating: {type: DataTypes.INTEGER, defaultValue: 0}, 
+    price: {type: DataTypes.INTEGER, allowNull: false},
+    rating: {type: DataTypes.FLOAT, defaultValue: 0},
     img: {type: DataTypes.STRING, allowNull: false}
 })
 

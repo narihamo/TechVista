@@ -1,4 +1,4 @@
-import {$host} from "./index";
+import {$authHost, $host} from "./index";
 
 export const getDevices = async (typeId, brandId, page, limit = 5) => {
   try {
@@ -18,5 +18,16 @@ export const getOneDevice = async (id) => {
 
 export const createDevice = async (device) => {
   const {data} = await $host.post('api/device', device)
+  return data
+}
+
+export const rateDevice = async (userId, deviceId, rate) => {
+  const {data} = await $authHost.post('api/device/rate', {userId, deviceId, rate})
+  return data
+}
+
+export const getUserRate = async (userId, deviceId) => {
+  const {data} = await $authHost.get('api/device/get-user-rate?userId=' + userId + '&deviceId=' + deviceId)
+  console.log('rate =>', data)
   return data
 }

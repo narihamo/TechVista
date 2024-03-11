@@ -6,7 +6,7 @@ class BasketController {
         const basket = await Models.Basket.findOne({where: { userId }})
         const basketDevice = await  Models.BasketDevice.create({ basketId: basket.id, deviceId: deviceId })
 
-        return res.json(basketDevice.dataValues)
+        return res.json(basketDevice)
     }
 
     async removeFromBasket(req, res, next) {

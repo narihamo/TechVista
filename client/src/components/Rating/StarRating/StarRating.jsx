@@ -1,7 +1,10 @@
-import React, {useState, createContext} from "react";
+import React, {useState, createContext, useContext, useEffect} from "react";
 import PropTypes from "prop-types";
 import StarRatingLabel from "../StarRatingLabel/StarRatingLabel";
 import StarsList from "../StarList/StarList";
+import {getUserRate, rateDevice} from "../../../http/deviceService";
+import {Context} from "../../../index";
+import {useParams} from "react-router-dom";
 
 export const StarRatingContext = createContext();
 
@@ -19,12 +22,15 @@ export default function StarRating({
   }) {
   const [rating, setRating] = useState(defaultState);
   const [hover, setHover] = useState(null);
+  const {user} = useContext(Context)
+  const {id} = useParams()
 
-  const setRatingFn = (value) => {
+  const setRatingFn = async (value) => {
     if (readOnly) return;
 
     setRating(value);
     onChangeValue(value);
+    await rateDevice(user.user.id, id, value)
   }
 
   const setHoverFn = (value) => {
@@ -33,6 +39,15 @@ export default function StarRating({
     setHover(value);
     onChangeHover(value);
   }
+
+  useEffect(() => {
+    async function fetchData() {
+      const userRate = await getUserRate(user.user.id, id)
+      console.log('userrate = ',userRate)
+      userRate && setRatingFn(userRate)
+    }
+    fetchData()
+  }, []);
 
   return (
     <>

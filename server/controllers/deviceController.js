@@ -48,7 +48,7 @@ class DeviceController {
         }
     }
 
-    async getAll(req, res, next) {
+    async getAll(req, res) {
         let {brandId, typeId, limit, page} = req.query
         page = page || 1
         limit = limit || 9
@@ -75,7 +75,7 @@ class DeviceController {
         return res.json(devices)
     }
 
-    async rate(req, res, next) {
+    async rate(req, res) {
         const { userId, deviceId, rate } = req.body
         const removePrevRate = await Models.Rating.destroy({ where: { userId, deviceId } })
         const rating = await Models.Rating.create({ rate, userId, deviceId })
@@ -83,7 +83,14 @@ class DeviceController {
         return res.json({rating, removePrevRate})
     }
 
-    async getOne(req, res, next) {
+    async getUserRate(req, res) {
+        const { userId, deviceId } = req.query
+        const userRate = await Models.Rating.findOne({ where: { userId, deviceId } })
+
+        return res.json(userRate?.rate)
+    }
+
+    async getOne(req, res) {
         try {
             const { id } = req.params
             const device = await Models.Device.findOne({ where: { id }, include: [{model: Models.DeviceInfo, as: 'info'}] })

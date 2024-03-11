@@ -22,7 +22,7 @@ app.use(errorHandler)
 const start = async () => {
     try {
         await db.authenticate()
-        await db.sync()
+        await db.sync({alter: true})
         app.listen(PORT, () => console.log('server listening on port ' + PORT))
     } catch (error) {
         console.log(error)
