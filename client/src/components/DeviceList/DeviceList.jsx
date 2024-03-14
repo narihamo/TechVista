@@ -9,7 +9,7 @@ const DeviceList = observer(() => {
 
     return (
         <div className={styles.deviceList}>
-            {device._devices && device._devices.map(device => {
+            {device.devices && device.devices.map(device => {
                 return <DeviceListItem device={device} key={device.id}/>
             })}
         </div>

@@ -2,16 +2,16 @@ import {$authHost} from "./index";
 
 
 export const addToBasket = async (userId, deviceId) => {
-  const {device} = await $authHost.post('api/basket', {userId, deviceId})
-  return device
+  const {data} = await $authHost.post('api/basket', {userId, deviceId})
+  return data
 }
 
 export const removeFromBasket = async (userId, deviceId) => {
-  const {removedDevice} = await $authHost.delete('api/basket', {userId, deviceId})
-  return removedDevice
+  const {data} = await $authHost.post('api/basket/remove', {userId, deviceId})
+  return data
 }
 
 export const getAllBasket = async (userId) => {
-  const {devices} = await $authHost.get('api/basket/' + userId)
-  return devices
+  const {data} = await $authHost.get('api/basket/' + userId)
+  return data
 }

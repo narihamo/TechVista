@@ -1,6 +1,6 @@
 import { Admin } from "./pages/Admin/Admin"
 import { Auth } from "./pages/Auth/Auth"
-import { Basket } from "./pages/Basket/Basket"
+import Basket from "./pages/Basket/Basket"
 import { Device } from "./pages/Device/Device"
 import { Registration } from "./pages/Registration/Registration"
 import Shop from "./pages/Shop/Shop"

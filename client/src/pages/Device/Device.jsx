@@ -6,6 +6,8 @@ import {Context} from "../../index";
 import {getOneDevice} from "../../http/deviceService";
 import star from '../../assets/rating.svg'
 import StarRating from "../../components/Rating/StarRating/StarRating";
+import {addToBasket} from "../../http/basketService";
+import basket from "../Basket/Basket";
 
 export const Device = () => {
   const [isOpen, setOpen] = useState(false)
@@ -20,7 +22,6 @@ export const Device = () => {
     {id: 4, title: 'Ядра', description: '2'},
     {id: 5, title: 'Аккамулятор', description: '4000'},
   ]
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +51,12 @@ export const Device = () => {
             <img src={process.env.REACT_APP_API_URL + device.img} alt={device.name} className={styles.img}/>
             <div className={styles.basket}>
               <p className={styles.price}>Цена: {device.price} RUB</p>
-              <button className={styles.basketBtn}>Добавить в корзину</button>
+              <button
+                className={styles.basketBtn}
+                onClick={() => addToBasket(user.user.id, params.id)}
+              >
+                Добавить в корзину
+              </button>
               <div className={styles.rating}>
                 <div className={styles.deviceRating}>
                   Рейтинг: {device.rating}

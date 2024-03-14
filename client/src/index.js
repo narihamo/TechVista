@@ -6,6 +6,7 @@ import DeviceStore from './store/DeviceStore';
 import BrandStore from './store/BrandStore';
 import TypeStore from './store/TypeStore';
 import './index.css'
+import BasketStore from "./store/BasketStore";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,7 +17,8 @@ root.render(
     user: new UserStore(),
     device: new DeviceStore(),
     brand: new BrandStore(),
-    type: new TypeStore()
+    type: new TypeStore(),
+    basket: new BasketStore()
   }}>
     <App />
   </Context.Provider>

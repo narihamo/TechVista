@@ -1,0 +1,90 @@
+.basketItem {
+    padding: 24px;
+    transition: .3s;
+    box-sizing: border-box;
+}
+.basketItem:hover {
+    transition: .3s;
+    background-color: #f0f0f0;
+}
+
+.basketItem img {
+    width: 150px;
+    height: 150px;
+    object-fit: scale-down;
+    margin-bottom: 12px;
+}
+
+p {
+    margin: 0;
+}
+
+.name {
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.price {
+    margin-bottom: 16px;
+}
+
+.link {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    font-size: 14px;
+    transition: .2s;
+    display: block;
+}
+.link:hover {
+    transition: .2s;
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.itemNum {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.countBtn {
+    font-size: 18px;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+.countBtn:hover {
+    transition: .2s;
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+.remove {
+    margin-top: 8px;
+    width: 100%;
+    border: 2px solid #BF3131;
+    color: #BF3131;
+    padding: 8px 16px;
+    font-size: 12px;
+    transition: .2s;
+    cursor: pointer;
+}
+.remove:hover {
+    transition: .2s;
+    background-color: #BF3131;
+    color: white;
+}

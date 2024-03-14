@@ -12,17 +12,25 @@ class BasketController {
     async removeFromBasket(req, res, next) {
         const { userId, deviceId } = req.body
         const basket = await Models.Basket.findOne({where: { userId }})
-        const removedDevice = await  Models.BasketDevice.destroy({ where: { basketId: basket.id, deviceId } })
+        const removedDeviceId = await Models.BasketDevice.findOne({ where: { basketId: basket.id, deviceId } })
+        const removedDevice = await  Models.BasketDevice.destroy({ where: { id: removedDeviceId.id } })
 
         return res.json(removedDevice)
     }
 
-    async getAll(req, res, next) {
+    async getAllBasket(req, res) {
         const { userId } = req.params
+        const basketArr = []
         const basket = await Models.Basket.findOne({ where: { userId } })
         const basketDevices = await Models.BasketDevice.findAll({ where: { basketId: basket.id }})
 
-        return res.json(basketDevices)
+        for (const device of basketDevices) {
+            const model = await Models.Device.findOne({ where: { id: device.deviceId } })
+            basketArr.push(model.dataValues)
+            console.log('here data values == ', model.dataValues)
+        }
+
+        return res.json(basketArr)
     }
 }
 

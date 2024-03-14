@@ -1,0 +1,43 @@
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px;
+}
+
+.heading {
+    margin: 0;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.buyBtn {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #1E9F02;
+    transition: .2s;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.buyBtn:hover {
+    transition: .2s;
+    background-color: #1E9F02;
+    color: white;
+}
+
+.totalItem {
+    transition: .2s;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+.totalItem:hover {
+    transition: .2s;
+    color: var(--blue);
+    border-bottom: 1px solid var(--blue);
+}
