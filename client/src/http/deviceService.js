@@ -28,6 +28,5 @@ export const rateDevice = async (userId, deviceId, rate) => {
 
 export const getUserRate = async (userId, deviceId) => {
   const {data} = await $authHost.get('api/device/get-user-rate?userId=' + userId + '&deviceId=' + deviceId)
-  console.log('rate =>', data)
   return data
 }

@@ -6,5 +6,7 @@ const router = new Router()
 router.post('/', basketController.addToBasket)
 router.get('/:userId', basketController.getAllBasket)
 router.post('/remove', basketController.removeFromBasket)
+router.post('/inc', basketController.countIncrement)
+router.post('/dec', basketController.countDecrement)
 
 export default router

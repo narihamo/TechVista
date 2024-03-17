@@ -11,7 +11,7 @@ import {DEVICE_ROUTE} from "../../utils/consts";
 const getBasketPrice = basket => {
   let result = 0
 
-  basket.forEach(device => result += device.price)
+  basket.forEach(device => result += device.price * device.count)
 
   return result
 }
@@ -23,18 +23,10 @@ const Basket = observer(() => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllBasket(user.user.id)
-      console.log(data)
       basket.setDevices(data)
-      console.log(basket.devices)
-      basket.createCountedArr(basket.devices)
     }
     fetchData()
-    // console.log(counted)
-    // console.log(basket.countedDevices)
-    // basket.setCountedDevices(counted)
   }, []);
-
-
 
   const basketPrice = getBasketPrice(basket.devices)
 
@@ -52,7 +44,7 @@ const Basket = observer(() => {
             {basket.devices.map((device, index) => {
               return (
                 <Link key={index} to={DEVICE_ROUTE + '/' + device.id} className={styles.totalItem}>
-                  - {device.name}: {device.price} RUB
+                  - {device.name} x {device.count}: {device.price * device.count} RUB
                 </Link>
               )
             })}

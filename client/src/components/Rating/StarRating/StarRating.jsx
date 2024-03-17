@@ -43,7 +43,6 @@ export default function StarRating({
   useEffect(() => {
     async function fetchData() {
       const userRate = await getUserRate(user.user.id, id)
-      console.log('userrate = ',userRate)
       userRate && setRatingFn(userRate)
     }
     fetchData()

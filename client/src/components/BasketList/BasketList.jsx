@@ -11,7 +11,7 @@ const BasketList = observer(() => {
     <div className={styles.basketList}>
       {basket.devices.map((device, index) => {
         return (
-          <BasketListItem device={device} index={index} key={index}/>
+          <BasketListItem device={device} key={index}/>
         )
       })}
     </div>

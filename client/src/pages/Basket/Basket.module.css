@@ -11,6 +11,13 @@
     margin-bottom: 30px;
 }
 
+.basketListWrap {
+    width: 100%;
+}
+.basket {
+    width: 100%;
+}
+
 .buyBtn {
     width: 100%;
     background-color: #fff;

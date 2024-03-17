@@ -13,7 +13,8 @@ const Basket = db.define('basket', {
 })
 
 const BasketDevice = db.define('basket_device', {
-    id: {type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true}
+    id: {type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true},
+    count: {type: DataTypes.INTEGER, defaultValue: 1}
 })
 
 const Device = db.define('device', {

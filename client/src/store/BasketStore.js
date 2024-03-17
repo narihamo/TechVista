@@ -3,7 +3,6 @@ import {makeAutoObservable} from "mobx";
 export default class BasketStore {
   constructor() {
     this._devices = []
-    this._countedDevices = []
     makeAutoObservable(this)
   }
 
@@ -16,34 +15,34 @@ export default class BasketStore {
   }
 
   deleteDevice(id) {
-    const filtred = this.devices.filter((device, index) => index != id)
-    console.log(filtred, id)
-    this.setDevices(filtred)
+    this._devices = this.devices.filter(device => device.id !== id)
   }
 
-  countDevice(id) {
-    const count = this._devices.filter(device => {
-      return device.id === id
-    }).length
-
-    return count
+  increment(id) {
+    const device = this.devices.filter(item => item.id === id)
+    device[0].count += 1
   }
 
-  createCountedArr(devices) {
-    console.log('devices = ', devices)
-    const counted = devices.map((device) => {
-      device.count = this.countDevice(device.id)
-      console.log(device)
-    })
-    console.log(counted)
-    return counted
+  decrement(id) {
+    const device = this.devices.filter(item => item.id === id)
+    device[0].count -= 1
+
+    if (device[0].count === 0) {
+      this.deleteDevice(id)
+    }
   }
 
-  setCountedDevices(devices) {
-    // this._countedDevices = devices
+  isInBasket(id) {
+    const device = this.devices.filter(item => item.id === id)
+
+    if (device[0]) {
+      return true
+    } else {
+      return false
+    }
   }
 
-  get countedDevices() {
-    return this._countedDevices
+  getDevice(id) {
+    return this.devices.filter(item => item.id === id)
   }
 }
