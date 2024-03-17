@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import styles from './Profile.module.css'
 import {Link, useNavigate} from "react-router-dom";
-import {BASKET_ROUTE} from "../../../utils/consts";
+import {ADMIN_ROUTE, BASKET_ROUTE} from "../../../utils/consts";
 import {Context} from "../../../index";
 
 const Profile = ({isOpen}) => {
@@ -18,6 +18,9 @@ const Profile = ({isOpen}) => {
   return (
     <div className={`${styles.modal} ${!isOpen ? styles.modalInactive : null}`}>
       <Link to={BASKET_ROUTE} className={styles.link}>Корзина</Link>
+      {user.user.role !== "ADMIN"
+        ? <Link to={ADMIN_ROUTE} className={styles.link}>Панель администратора</Link>
+        : null}
       <div className={styles.link} onClick={logout}>Выход</div>
     </div>
   );

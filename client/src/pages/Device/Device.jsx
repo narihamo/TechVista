@@ -30,6 +30,7 @@ export const Device = observer(() => {
         if (user.isAuth) {
           const data = await getAllBasket(user.user.id)
           basket.setDevices(data)
+          setClicked(false)
         }
       } catch (e) {
         alert(e.response.data.message)

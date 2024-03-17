@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styles from './Admin.module.css'
 
-export const Admin = () => {
+const Admin = () => {
   return (
-    <div>Admin</div>
-  )
-}
+    <div className={styles.panel}>
+      
+    </div>
+  );
+};
+
+export default Admin;
