@@ -1,0 +1,21 @@
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    transition: .1s;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    cursor: pointer;
+    width: 20px;
+}
+.item:hover {
+    transition: .1s;
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.itemActive {
+    background-color: var(--blue);
+    color: white;
+}

@@ -9,6 +9,7 @@ import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import {getBrands} from "../../http/brandService";
 import {getTypes} from "../../http/typeService";
+import PaginationList from "../../components/PaginationList/PaginationList";
 
 const Shop = observer(() => {
   const [isOpen, setOpen] = useState(false)
@@ -26,7 +27,7 @@ const Shop = observer(() => {
   }, [device.brands])
 
   useEffect(() => {
-    getDevices(type.selectedType.id, brand.selectedBrand.id, device.page, 6).then(data => {
+    getDevices(type.selectedType.id, brand.selectedBrand.id, device.page, 12).then(data => {
       device.setDevices(data.rows)
       device.setTotalCount(data.count)
     })
@@ -42,6 +43,7 @@ const Shop = observer(() => {
         </div>
         <div className={styles.devices}>
           <DeviceList/>
+          <PaginationList/>
         </div>
       </div>
     </>

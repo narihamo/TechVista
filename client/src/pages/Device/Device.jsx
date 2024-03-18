@@ -16,13 +16,8 @@ export const Device = observer(() => {
   const params = useParams()
   const [loading, setLoading] = useState(true)
   const {user, basket} = useContext(Context)
-  const description = [
-    {id: 1, title: 'Оперативная память', description: '5 гб'},
-    {id: 2, title: 'Камера', description: '12 мп'},
-    {id: 3, title: 'Процессор', description: 'Пентиум 3'},
-    {id: 4, title: 'Ядра', description: '2'},
-    {id: 5, title: 'Аккамулятор', description: '4000'},
-  ]
+
+  console.log(device)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -132,7 +127,7 @@ export const Device = observer(() => {
             </div>
           </div>
           <ul className={styles.infoList}>
-            {description.map(el => {
+            {device.info.map(el => {
               return (
                 <li className={styles.infoListItem} key={el.id}>
                   {el.title}: {el.description}
