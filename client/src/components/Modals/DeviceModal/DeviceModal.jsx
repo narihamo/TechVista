@@ -35,10 +35,9 @@ const DeviceModal = observer(({setOpen, isOpen}) => {
       formData.append('name', name)
       formData.append('price', `${price}`)
       formData.append('img', file)
-      formData.append('brandId', brand.selectedBrand.id)
-      formData.append('typeId', type.selectedType.id)
+      formData.append('brandId', brand.selectedBrand[0].id)
+      formData.append('typeId', type.selectedType[0].id)
       formData.append('info', JSON.stringify(info))
-      console.log('json', JSON.stringify(info))
       createDevice(formData)
 
       setFile(null)
@@ -101,7 +100,12 @@ const DeviceModal = observer(({setOpen, isOpen}) => {
           >
             {type.types.map(type => {
               return (
-                <option key={type.name}>{type.name}</option>
+                <option
+                  key={type.name}
+                  value={type.name}
+                >
+                  {type.name}
+                </option>
               )
             })}
           </select>
@@ -120,7 +124,12 @@ const DeviceModal = observer(({setOpen, isOpen}) => {
           >
             {brand.brands.map(brand => {
               return (
-                <option key={brand.name}>{brand.name}</option>
+                <option
+                  key={brand.name}
+                  value={brand.name}
+                >
+                  {brand.name}
+                </option>
               )
             })}
           </select>

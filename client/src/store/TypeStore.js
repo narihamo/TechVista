@@ -52,6 +52,7 @@ export default class TypeStore {
     }
 
     getTypeByName(name) {
-        return this.types.filter(type => type.name === name)
+        const type = this.types.filter(type => type.name === name)
+        return type
     }
 }

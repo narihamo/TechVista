@@ -25,16 +25,11 @@ class DeviceController {
     async create(req, res, next) {
         try {
             let { name, price, info, brandId, typeId } = req.body
-            console.log('body ', req.body)
             const { img } = req.files
             const filename = uuidv4() + '.jpg'
             img.mv(path.resolve(process.cwd(), 'static', filename))
-    
             const device = await Models.Device.create({ name, price, brandId, typeId, img: filename })
-            if (info) {
-                console.log('inside' ,info)
-            }
-            console.log('out', info)
+
             if (info) {
                 info = JSON.parse(info)
                 console.log(info)
