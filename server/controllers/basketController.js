@@ -23,7 +23,6 @@ class BasketController {
 
         basketDevice.count += 1
         await basketDevice.save()
-        console.log(basketDevice.dataValues)
         return res.json(basketDevice)
     }
 
@@ -39,7 +38,6 @@ class BasketController {
             await Models.BasketDevice.destroy({ where: { id: basketDevice.id } })
         }
 
-        console.log(basketDevice.dataValues)
         return res.json(basketDevice)
     }
 
@@ -60,7 +58,6 @@ class BasketController {
         for (const device of basketDevices) {
             const model = await Models.Device.findOne({ where: { id: device.deviceId } })
             model.dataValues.count = device.count
-            // console.log('here model ', model.dataValues)
             basketArr.push(model.dataValues)
         }
 

@@ -20,6 +20,11 @@ export default class BrandStore {
             this._selectedBrand = {}
         } else this._selectedBrand = brand
     }
+
+    setSelectedBrandModal(brand) {
+        this._selectedBrand = brand
+    }
+
     setPage(page) {
         this._page = page
     }
@@ -42,5 +47,9 @@ export default class BrandStore {
     }
     get limit() {
         return this._limit
+    }
+
+    getBrandByName(name) {
+        return this.brands.filter(brand => brand.name === name)
     }
 } 

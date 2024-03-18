@@ -9,7 +9,6 @@ import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import {getBrands} from "../../http/brandService";
 import {getTypes} from "../../http/typeService";
-import Profile from "../../components/Modals/Profile/Profile";
 
 const Shop = observer(() => {
   const [isOpen, setOpen] = useState(false)
@@ -22,6 +21,8 @@ const Shop = observer(() => {
       device.setDevices(data.rows)
       device.setTotalCount(data.count)
     })
+    type.setSelectedType({})
+    brand.setSelectedBrand({})
   }, [device.brands])
 
   useEffect(() => {
@@ -30,8 +31,6 @@ const Shop = observer(() => {
       device.setTotalCount(data.count)
     })
   }, [device.page, type.selectedType, brand.selectedBrand])
-
-
 
   return (
     <>

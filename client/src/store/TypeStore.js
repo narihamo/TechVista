@@ -16,9 +16,13 @@ export default class TypeStore {
 
     setSelectedType(type) {
         this.setPage(1)
-        if (this._selectedType.id === type.id) {
+        if (this._selectedType?.id === type?.id) {
             this._selectedType = {}
         } else this._selectedType = type
+    }
+
+    setSelectedTypeModal(type) {
+        this._selectedType = type
     }
 
     setPage(page) {
@@ -45,5 +49,9 @@ export default class TypeStore {
     }
     get limit() {
         return this._limit
+    }
+
+    getTypeByName(name) {
+        return this.types.filter(type => type.name === name)
     }
 }

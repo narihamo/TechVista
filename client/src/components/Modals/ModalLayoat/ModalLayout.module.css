@@ -1,0 +1,41 @@
+.background {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    opacity: 1;
+}
+.backgroundInactive {
+    transition: .3s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    padding: 50px;
+    background-color: #fff;
+    width: 600px;
+}
+
+.close {
+    text-align: right;
+    user-select: none;
+    margin-bottom: 24px;
+}
+
+.closeBtn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.closeBtn img {
+    transform: rotate(45deg);
+    width: 32px;
+    height: 32px;
+}
+

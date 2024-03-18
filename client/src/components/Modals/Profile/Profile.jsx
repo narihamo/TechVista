@@ -18,7 +18,7 @@ const Profile = ({isOpen}) => {
   return (
     <div className={`${styles.modal} ${!isOpen ? styles.modalInactive : null}`}>
       <Link to={BASKET_ROUTE} className={styles.link}>Корзина</Link>
-      {user.user.role !== "ADMIN"
+      {user.user.role === "ADMIN"
         ? <Link to={ADMIN_ROUTE} className={styles.link}>Панель администратора</Link>
         : null}
       <div className={styles.link} onClick={logout}>Выход</div>

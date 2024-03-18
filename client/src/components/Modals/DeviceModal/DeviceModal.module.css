@@ -1,0 +1,142 @@
+.input {
+    width: 100%;
+    border: 2px solid var(--blue);
+    padding: 12px;
+    outline: 3px solid transparent;
+    transition: .2s;
+    font-size: 14px;
+}
+.input:focus {
+    transition: .2s;
+    outline: 3px solid var(--blue);
+}
+
+.label {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.save {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+    gap: 12px;
+}
+
+.closeBtn {
+    transition: .2s;
+    border: 2px solid #BF3131;
+    color: #BF3131;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.closeBtn:hover {
+    transition: .2s;
+    background-color: #BF3131;
+    color: white;
+}
+
+.saveBtn {
+    transition: .2s;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.saveBtn:hover {
+    transition: .2s;
+    background-color: var(--blue);
+    color: white;
+}
+
+.typeLabel {
+    margin-right: 12px;
+}
+
+.brandLabel {
+    margin-right: 12px;
+}
+
+.select {
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 2px solid var(--blue);
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+.select:focus {
+    transition: .2s;
+    outline: 2px solid var(--blue);
+}
+
+.typeSelect {
+    margin-bottom: 12px;
+}
+
+.infoSection {
+    margin-top: 12px;
+}
+
+.addCharacteristic {
+    width: 100%;
+    transition: .2s;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    background-color: white;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+}
+.addCharacteristic:hover {
+    transition: .2s;
+    color: white;
+    background-color: var(--blue);
+}
+
+.infoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.infoInput {
+    transition: .2s;
+    padding: 12px;
+    background-color: #fff;
+    border: 2px solid var(--blue);
+    outline: 2px solid transparent;
+}
+.infoInput:focus {
+    transition: .2s;
+    outline: 2px solid var(--blue);
+}
+
+.infoBtn {
+    transition: .2s;
+    border: 2px solid #BF3131;
+    color: #BF3131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+}
+.infoBtn:hover {
+    transition: .2s;
+    background-color: #BF3131;
+    color: white;
+}
